@@ -1,5 +1,5 @@
 <?php
-namespace EasyForm;
+namespace Easyform;
 
 class Notify {
 	public function email($params,$formId,$data) {

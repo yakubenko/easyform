@@ -1,14 +1,20 @@
 {
     "name": "yakubenko/easyform",
-    "type": "library",
+    "type": "package",
     "description": "Form validation class",
+	"version":"0.0.1",
     "authors": [
         {
             "name": "Stanislav Yakubenko",
             "email": "sn.yakubenko@gmail.com"
         }
     ],
-    "require": {
-        "php": ">=5.0.0"
-    }
+	"autoload": {
+		"psr-4": {
+			"Easyform\\":"src/"
+		}
+	},
+	"require": {
+		"phpmailer/phpmailer":"^5.2"
+	}
 }
