@@ -1,0 +1,14 @@
+{
+    "name": "yakubenko/easyform",
+    "type": "library",
+    "description": "Form validation class",
+    "authors": [
+        {
+            "name": "Stanislav Yakubenko",
+            "email": "sn.yakubenko@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.0.0"
+    }
+}
