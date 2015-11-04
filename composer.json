@@ -1,8 +1,7 @@
 {
     "name": "yakubenko/easyform",
     "type": "package",
-    "description": "Form validation class",
-	"version":"0.0.1",
+    "description": "Библиотека, которая позволяет создать правила валидации для любой формы и выполнить необходимые триггеры при ее успешной отправке.",
     "authors": [
         {
             "name": "Stanislav Yakubenko",
