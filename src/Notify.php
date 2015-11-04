@@ -3,7 +3,7 @@ namespace Easyform;
 
 class Notify {
 	public function email($params,$formId,$data) {
-		$mailer = new PHPMailer();
+		$mailer = new \PHPMailer();
 		$mailer->isSMTP();
 		$mailer->Host = $params['smtpServer'];
 		$mailer->Port = $params['smtpPort'];
