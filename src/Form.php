@@ -24,7 +24,7 @@ class Form {
 				$this->errors[$this->formConfig['id'].'-'.$key] = $field['message'];
 			}
 			
-			$this->formData[$this->formConfig['id'].'-'.$key] = $_POST[$this->formConfig['id'].'-'.$key];
+			$this->formData[$key] = $_POST[$this->formConfig['id'].'-'.$key];
 		}
 	}
 	
@@ -45,7 +45,7 @@ class Form {
 	
 	function execTriggers($triggers) {
 		foreach ($triggers as $key=>$params) {
-			$this->triggers->$key($params,  $this->formConfig['id'],  $this->formData);
+			$this->triggers->$key($params,  $this->formConfig['id'],  $this->formData,  $this->formConfig['fields']);
 		}
  	}
 	

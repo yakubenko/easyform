@@ -2,7 +2,7 @@
 namespace Easyform;
 
 class Notify {
-	public function email($params,$formId,$data) {
+	public function email($params,$formId,$data,$fields) {
 		$mailer = new \PHPMailer();
 		$mailer->isSMTP();
 		$mailer->Host = $params['smtpServer'];
@@ -16,11 +16,15 @@ class Notify {
 		$mailer->CharSet = "UTF-8";
 		
 		$mailer->setFrom($params['from']);
-		$mailer->addAddress($params['to']);
+		
+		foreach($params['to'] as $address) {
+			$mailer->addAddress($address);
+		}
 		
 		$msg = '<p>Message from form: '.$formId.'</p>';
 		foreach($data as $k=>$v) {
-			$msg.= '<p><b>'.$k.'</b>: '.$v.'</p>';
+			$label = !empty($fields[$k]['label'])?$fields[$k]['label']:$k;
+			$msg.= '<p><b>'.$label.'</b>: '.$v.'</p>';
 		}
 		
 		$mailer->msgHTML($msg);
